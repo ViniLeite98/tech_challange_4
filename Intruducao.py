@@ -4,7 +4,7 @@ import plotly.express as px
 st.set_page_config(layout='wide')
 
 #Importacao e tratamento da base
-dados = pd.read_csv('/repository/tech-challange-4/dados/ipeadata[19-04-2024-09-47].csv',sep = ';')
+dados = pd.read_csv('https://github.com/Toniferson/tech_challange_4/blob/main/dados/ipeadata%5B19-04-2024-09-47%5D.csv',sep = ';')
 dados['Data'] = pd.to_datetime(dados['Data'],format='%d/%m/%Y')
 dados = dados.set_index('Data')
 dados = dados.rename(columns={'Preço - petróleo bruto - Brent (FOB) - US$ - Energy Information Administration (EIA) - EIA366_PBRENT366':'Preço - Petróleo Bruto'})
