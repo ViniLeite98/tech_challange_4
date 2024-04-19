@@ -19,7 +19,7 @@ dados_anuais = dados.groupby(pd.Grouper(freq = 'YE'))['Preço - Petróleo Bruto'
 fig_evolutivo_brent = px.line(dados_anuais)
 
 #Aplicacao
-st.image('/repository/tech-challange-4/dados/petrobras.jpg_2090796243-scaled.jpg')
+st.image('dados/petrobras.jpg_2090796243-scaled.jpg')
 st.markdown("<h1 style='text-align: center; color: orange;'>Tech Challange - Fase 4</h1>", unsafe_allow_html=True)
 st.write('Para um time multidisciplinar qualquer desafio é uma oportunidade de unir forças alcançar novas oportunidades :rocket:')
 st.divider()
