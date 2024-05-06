@@ -27,7 +27,7 @@ st.divider()
 tab1, tab2, tab3= st.tabs(['Introdução', 'Base de Dados', 'Workflow'])
 with tab1:  
     st.markdown("<h2 style='text-align: left; color: lightblue;'>O Desafio<h2>", unsafe_allow_html=True)
-    st.write('''Como entrega final para esta fase, foi proposto... melhorar texto
+    st.write('''Como entrega final para esta fase, foi proposto um trabalho de analisar os dados de preço do pretróleo Brent. Para esta entrega sera feito um dashboard interativo para a geração de insights além de um modelo de Machine Learning com a previsão do preço do Brent
                 ''')
     st.markdown("<h2 style='text-align: left; color: lightblue;'>O que é 'Brent'<h2>", unsafe_allow_html=True)
     st.write('''
@@ -36,8 +36,15 @@ with tab1:
                 ''')
 with tab2:
     st.markdown("<h2 style='text-align: left; color: lightblue;'>Time Series<h2>", unsafe_allow_html=True)
-    st.write('''Texto falando da base...
-                ''')
+   
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write('A base na qual estamos trabalhando pode ser encontrada no site do IPEA - Instituto de Pesquisa Econômica Aplicada e tem como fonte das informações a "Energy Information Administration (EIA)" ')
+        st.write('A tabela que é disponibilizada possui duas colunas, uma de data e uma outra com o valor do preço do pretóleo bruto (Brent), podemos já tirar alguns insights só olhando a base brevemente, como por exemplo que tal estrutura pode ser tratada como uma Série Temporal, encaixando com alguns modelos previamente estudado')
+    with col2:
+        st.dataframe(dados.head(15))
+        st.markdown(f'A tabela possui :blue[{dados.shape[0]}] linhas e :blue[{dados.shape[1]}] colunas')
+    st.divider()
+    st.markdown("<h2 style='text-align: left; color: lightblue;'>Evolutivo das médias dos valores anual<h2>", unsafe_allow_html=True)
     st.plotly_chart(fig_evolutivo_brent,use_container_width = True)
-    st.dataframe(dados.head(15))
-    st.markdown(f'A tabela possui :blue[{dados.shape[0]}] linhas e :blue[{dados.shape[1]}] colunas')
+    
