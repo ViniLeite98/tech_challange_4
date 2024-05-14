@@ -24,16 +24,22 @@ st.markdown("<h1 style='text-align: center; color: orange;'>Tech Challange - Fas
 st.write('Para um time multidisciplinar qualquer desafio é uma oportunidade de unir forças alcançar novas oportunidades :rocket:')
 st.divider()
 
-tab1, tab2, tab3= st.tabs(['Introdução', 'Base de Dados', 'Workflow'])
+tab1, tab2= st.tabs(['Introdução', 'Base de Dados'])
 with tab1:  
     st.markdown("<h2 style='text-align: left; color: lightblue;'>O Desafio<h2>", unsafe_allow_html=True)
     st.write('''Como entrega final para esta fase, foi proposto um trabalho de analisar os dados de preço do pretróleo Brent. Para esta entrega sera feito um dashboard interativo para a geração de insights além de um modelo de Machine Learning com a previsão do preço do Brent
                 ''')
     st.markdown("<h2 style='text-align: left; color: lightblue;'>O que é 'Brent'<h2>", unsafe_allow_html=True)
     st.write('''
-             Antes de iniciarmos nossas analises é muito importante que se explique o que é o Brent, que será analisado neste trabalho. O Brent é uma classificação de pretóleo não refinado que acabou sendo estipulado como padrão internacional para a cotação do preço mundialmente.\\
-             O petróleo Brent foi batizado assim porque era extraído de uma base da Shell chamada Brent. Atualmente, a palavra Brent designa todo o petróleo extraído no Mar do Norte e comercializado na Bolsa de Londres.
+             Antes de iniciarmos nossas analises é muito importante que se explique o que é o Brent, que será analisado neste trabalho. rO nome “Brent” para o petróleo foi criado por uma política interna da Shell. Originalmente, a Shell denominava seus campos de produção com nomes de aves, e no caso do campo de petróleo Brent, o nome foi inspirado no ganso de Brent. Esse campo de petróleo está localizado no Mar do Norte, próximo à costa da Escócia, e foi descoberto em 1971. A produção de petróleo no campo de Brent começou em 1976. Desde então, o Brent se tornou uma referência internacional para o preço do petróleo bruto e é negociado nos mercados globais
                 ''')
+    st.markdown("<h2 style='text-align: left; color: lightblue;'>Como os preços são determinados?'<h2>", unsafe_allow_html=True)
+    st.write('''Os preços do petróleo no mercado internacional são influenciados por uma combinação complexa de fatores. Primeiramente, a lei da oferta e demanda desempenha um papel crucial. O petróleo é uma commodity, caracterizada por baixa industrialização, e seu preço é ajustado com base na demanda global. Quando a demanda por petróleo supera a oferta, os preços tendem a subir, e vice-versa.
+Além disso, os países produtores têm um impacto significativo nos preços. Os três maiores produtores de petróleo (Arábia Saudita, Rússia e Estados Unidos) representam cerca de 40% do mercado mundial. Suas decisões sobre produção e exportação afetam diretamente os preços do petróleo.
+Eventos geopolíticos e tensões regionais também influenciam o mercado. Conflitos no Oriente Médio, sanções e questões diplomáticas podem afetar a oferta e a estabilidade do mercado petrolífero. Além do preço do petróleo bruto, outros fatores como custos de refino, impostos e margens de lucro das empresas também determinam os preços dos combustíveis.
+Por fim, os preços do petróleo são frequentemente associados a marcadores globais, como o Brent (extraído no Mar do Norte) e o WTI (preferido nos EUA). Esses marcadores influenciam desde o custo da gasolina até o preço de produtos derivados do petróleo.
+''')
+    st.image('dados/preco do brent.jpg')
 with tab2:
     st.markdown("<h2 style='text-align: left; color: lightblue;'>Time Series<h2>", unsafe_allow_html=True)
    
@@ -47,4 +53,5 @@ with tab2:
     st.divider()
     st.markdown("<h2 style='text-align: left; color: lightblue;'>Evolutivo das médias dos valores anual<h2>", unsafe_allow_html=True)
     st.plotly_chart(fig_evolutivo_brent,use_container_width = True)
+
     
